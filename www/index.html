@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--Other section removed for sake of simplicity -->
+<title>Hello World</title>
+</head>
+<body>
+<button type="button" onclick="addCountry()">Add Canada</button>
+<br/><br/>
+<button type="button" onclick="get1Data()">Get USA Data</button>
+<br/><br/>
+<button type="button" onclick="getAllData()">Get All Data</button>
+<br/><br/>
+<button type="button" onclick="removeAllData()">Remove All Countries</
+button> <br/><br/>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript">
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+localStorage.setItem("IN", "India");
+localStorage.setItem("FR", "France");
+localStorage.setItem("USA", "U.S.A");
+}
+function addCountry() {
+localStorage.setItem("CA", "Canada");
+alert("Canada added successfully");
+}
+function get1Data() {
+var usa = localStorage.getItem("USA");
+alert("Country Name is " + usa);
+}
+function getAllData() {
+for(var i in localStorage){
+alert(localStorage.getItem(i));
+}
+}
+function removeAllData() {
+window.localStorage.clear();
+alert("All Countries removed successfully");
+}
+</script>
+</body>
+</html>
